@@ -39,3 +39,18 @@ app.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);
 
 });
+
+
+// API to print the whole table with JSON
+
+
+// API to print reserved tables
+
+
+// API to print waitlist
+
+
+// Take new tables from reserve form, and push them to the tables array
+
+
+// list reservations and waitlist on  the tables page
