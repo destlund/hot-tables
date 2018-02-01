@@ -31,11 +31,18 @@ app.use(express.static(__dirname))
 app.get("/", function(req, res) {
   res.sendFile(path.join(__dirname, "home.html"));
 });
+app.get("/reserve", function(req, res) {
+  res.sendFile(path.join(__dirname, "reserve.html"));
+});
+
+app.get("/tables", function(req, res) {
+  res.sendFile(path.join(__dirname, "tables.html"));
+});
 
 
 //adding new table
 app.post("api/new", function(req,res){
-	
+
 	var newTable = req.body;
 	//add the json that was added to array
 	tables.push(newTable);
