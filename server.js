@@ -7,15 +7,21 @@ var PORT = 3000;
 
 //begin of array of tables
 var tables = [
+    {
+        customerName: "phil",
+        phoneNumber:"666-666-6666"
+        customerEmail:"phil@phil.com",
+        customerID:"Philly"
+    }
+];
+
+var wait = [
 	{
-		routeName: "phil",
-		name:"Phil Q. Customer",
-		phoneNumber:"666-666-6666",
-		email:"phil@phil.com",
-		uniqueID:"Philly"
-	},
-
-
+    customerName: "Jenny",
+    phoneNumber: "8675309",
+    customerEmail: "jj@j.com",
+    customerID: "jenny"
+    }
 ];
 
 app.use(express.static(__dirname))
