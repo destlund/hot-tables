@@ -37,18 +37,35 @@ app.get("/tables", function(req, res) {
 });
 
 
-//adding new table
-app.post("api/new", function(req,res){
-
-	var newTable = req.body;
-	//add the json that was added to array
-	tables.push(newTable);
-	//display json
-	res.json(newTable);
-
-});
 
 app.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);
 
 });
+
+
+// API to print the whole table with JSON
+
+
+// API to print reserved tables
+
+
+// API to print waitlist
+
+
+// Take new tables from reserve form, and push them to the tables array
+
+
+	//adding new table
+	app.post("api/new", function(req,res){
+
+		var newTable = req.body;
+		//add the json that was added to array
+		tables.push(newTable);
+		//display json
+		res.json(newTable);
+
+	});
+
+
+// list reservations and waitlist on  the tables page
