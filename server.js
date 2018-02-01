@@ -12,16 +12,17 @@ var tables = [
 		phoneNumber:"666-666-6666",
 		customerEmail:"phil@phil.com",
 		customerID:"Philly"
-	};
+	}
+]
 
 var wait =
 
-{
+[{
 	customerName: "Jenny",
 	phoneNumber: "8675309",
 	customerEmail: "jj@j.com",
 	customerID: "jenny"
-	};
+	}]
 
 
 app.use(express.static(__dirname))
@@ -44,14 +45,18 @@ app.listen(PORT, function() {
 });
 
 
-// API to print the whole table with JSON
-
 
 // API to print reserved tables
 
+app.get("/api/tables", function(req, res) {
+	return res.json(tables);
+  });
 
 // API to print waitlist
 
+app.get("/api/waitlist", function(req, res) {
+	return res.json(wait);
+  });
 
 // Take new tables from reserve form, and push them to the tables array
 
