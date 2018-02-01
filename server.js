@@ -12,10 +12,7 @@ var tables = [
 		phoneNumber:"666-666-6666",
 		customerEmail:"phil@phil.com",
 		customerID:"Philly"
-	}, 
-
-
-];
+	};
 
 var wait =
 
@@ -24,7 +21,7 @@ var wait =
 	phoneNumber: "8675309",
 	customerEmail: "jj@j.com",
 	customerID: "jenny"
-	},
+	};
 
 
 app.use(express.static(__dirname))
