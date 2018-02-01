@@ -5,6 +5,26 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var path = require("path");
 var fs = require("fs");
+
+var tableArray = [
+	{
+		customerName: 'Charlie',
+		customerEmail: 'charlie@gmail.com',
+		customerID: 'charlie72',
+		phoneNumber: '805-966-6780'
+
+	}
+];
+
+var waitArray = [
+	{
+		customerName: 'Lisa',
+		customerEmail: 'lisa@gmail.com',
+		customerID: 'lisssa',
+		phoneNumber: '805-241-2565'
+		
+	}
+];
 //Dependencies//
 
 //Opening Express//
@@ -28,6 +48,7 @@ app.get("/reserve", function(req, res) {
 app.get("/tables", function(req, res) {
   res.sendFile(path.join(__dirname, "tables.html"));
 });
+
 
 
 
