@@ -8,15 +8,24 @@ var PORT = 3000;
 //begin of array of tables
 var tables = [
 	{
-		routeName: "phil",
-		name:"Phil Q. Customer",
+		customerName: "phil",
 		phoneNumber:"666-666-6666",
-		email:"phil@phil.com",
-		uniqueID:"Philly"
+		customerEmail:"phil@phil.com",
+		customerID:"Philly"
 	}, 
 
 
 ];
+
+var wait =
+
+{
+	customerName: "Jenny",
+	phoneNumber: "8675309",
+	customerEmail: "jj@j.com",
+	customerID: "jenny"
+	},
+
 
 app.use(express.static(__dirname))
 app.get("/", function(req, res) {
@@ -39,18 +48,3 @@ app.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);
 
 });
-
-
-// API to print the whole table with JSON
-
-
-// API to print reserved tables
-
-
-// API to print waitlist
-
-
-// Take new tables from reserve form, and push them to the tables array
-
-
-// list reservations and waitlist on  the tables page
