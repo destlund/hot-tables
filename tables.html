@@ -1,28 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<title>Tables Page</title>
 
 	<!-- Latest compiled and minified CSS & JS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+	 crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+	 crossorigin="anonymous"></script>
 
 </head>
+
 <body>
 
 	<div class="container">
 
 		<div class="jumbotron">
-			<h1 class="text-center"><span class="glyphicon glyphicon-fire"></span> Hotter Restaurant</h1>
+			<h1 class="text-center">
+				<span class="glyphicon glyphicon-fire"></span> Hottertouope Restaurant</h1>
 			<hr>
 			<h2 class="text-center">Current Reservations and Waiting List</h2>
 			<br>
 
 			<div class="text-center">
-				<a href="/reserve.html"><button type="button" class="btn btn-lg btn-danger"><span class="glyphicon glyphicon-credit-card"></span> Make Reservation</button></a>
-				<a href="/"><button type="button" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-home"></span></button></a>
+				<a href="/reserve">
+					<button type="button" class="btn btn-lg btn-danger">
+						<span class="glyphicon glyphicon-credit-card"></span> Make Reservation</button>
+				</a>
+				<a href="/">
+					<button type="button" class="btn btn-lg btn-default">
+						<span class="glyphicon glyphicon-home"></span>
+					</button>
+				</a>
 			</div>
 		</div>
 
@@ -50,13 +62,42 @@
 		</div>
 
 
-	    <footer class="footer">
-	      <div class="container">
-	      	<p>Control Panel</p>
-	        <p><a href="#" id="clear">Clear Table</a> | <a href="/api/tables">API Table Link</a> | <a href="/api/waitlist">API Wait List</a></p>
-	      </div>
-	    </footer>
+		<footer class="footer">
+			<div class="container">
+				<p>Control Panel</p>
+				<p>
+					<a href="#" id="clear">Clear Table</a> |
+					<a href="/api/tables">API Table Link</a> |
+					<a href="/api/waitlist">API Wait List</a>
+				</p>
+			</div>
+		</footer>
 
 	</div>
+	<script type="text/javascript">
+		console.log('Hello world!')
+		$(document).ready(function () {
+			$.get("/api/tables", function (data) {
+				console.log(data);
+				if (data) {
+					for ( i = 0 ;i < data.length; i++ ) {
+						$('#tableSection').append('<h2><span class="label label-primary">' + (i + 1) + '</span> | ' + data[i].customerName + '</h2>');
+					};
+				}else {
+					$("#tableSection").text("No reservations.");
+				};
+			});
+			$.get("/api/waitlist", function (data) {
+				console.log(data);
+				if (data) {
+					for ( i = 0 ;i < data.length; i++ ) {
+						$('#waitlistSection').append('<h2><span class="label label-primary">' + (i + 1) + '</span> | ' + data[i].customerName + '</h2>');
+					};
+				}else {
+					$("#waitlistSection").text("No reservations.");
+				};
+			});
+		});
+	</script>
 
 </body>
