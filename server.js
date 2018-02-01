@@ -7,22 +7,23 @@ var PORT = 3000;
 
 //begin of array of tables
 var tables = [
-    {
-        customerName: "phil",
-        phoneNumber:"666-666-6666",
-        customerEmail:"phil@phil.com",
-        customerID:"Philly"
-    }
-];
-
-var wait = [
 	{
-    customerName: "Jenny",
-    phoneNumber: "8675309",
-    customerEmail: "jj@j.com",
-    customerID: "jenny"
-    }
-];
+		customerName: "phil",
+		phoneNumber:"666-666-6666",
+		customerEmail:"phil@phil.com",
+		customerID:"Philly"
+	}
+]
+
+var wait =
+
+[{
+	customerName: "Jenny",
+	phoneNumber: "8675309",
+	customerEmail: "jj@j.com",
+	customerID: "jenny"
+	}]
+
 
 app.use(express.static(__dirname))
 app.get("/", function(req, res) {
