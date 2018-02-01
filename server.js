@@ -15,7 +15,7 @@ var tables = [
 		uniqueID:"Philly"
 	}, 
 
-]
+];
 
 //adding new table
 app.post("api/new", function(req,res){
