@@ -9,7 +9,7 @@ var PORT = 3000;
 var tables = [
     {
         customerName: "phil",
-        phoneNumber:"666-666-6666"
+        phoneNumber:"666-666-6666",
         customerEmail:"phil@phil.com",
         customerID:"Philly"
     }
@@ -44,14 +44,18 @@ app.listen(PORT, function() {
 });
 
 
-// API to print the whole table with JSON
-
 
 // API to print reserved tables
 
+app.get("/api/tables", function(req, res) {
+	return res.json(tables);
+  });
 
 // API to print waitlist
 
+app.get("/api/waitlist", function(req, res) {
+	return res.json(wait);
+  });
 
 // Take new tables from reserve form, and push them to the tables array
 
