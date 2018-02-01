@@ -15,7 +15,14 @@ var tables = [
 		uniqueID:"Philly"
 	}, 
 
+
 ];
+
+app.use(express.static(__dirname))
+app.get("/", function(req, res) {
+  res.sendFile(path.join(__dirname, "home.html"));
+});
+
 
 //adding new table
 app.post("api/new", function(req,res){
